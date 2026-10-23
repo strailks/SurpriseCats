@@ -33,7 +33,7 @@ public class AutoClicker : MonoBehaviour
         {
             if(Time.time - lastTreeClick >= timeBetweenTreeClicks)
             {
-                manager.ChopTree();
+                manager.AutoChopTree();
                 lastTreeClick = Time.time;
             }
         }

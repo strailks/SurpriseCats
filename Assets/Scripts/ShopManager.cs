@@ -5,17 +5,17 @@ public class ShopManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
 
 public enum ShopOptions
 {
-    ClickPower, Autoclick, Cheaper
+    ClickPower, Autoclick, Cheaper, AutoclickPower
 }

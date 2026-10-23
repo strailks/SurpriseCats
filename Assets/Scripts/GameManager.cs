@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
     public GameObject[] canvases;
 
     private int clickPower = 1;
+    private int autoClickPower = 1;
     private AutoClicker autoClicker;
     private int totalLumber = 0;
 
@@ -55,6 +56,20 @@ public class GameManager : MonoBehaviour
         UpdateTrees();
         totalLumber += clickPower;
         UpdateStats();
+    }
+
+    public void AutoChopTree()
+    {
+        trees += autoClickPower;
+        UpdateTrees();
+
+        totalLumber += autoClickPower;
+        UpdateStats();
+    }
+
+    public void UpgradeAutoClickPower(int amount)
+    {
+        autoClickPower += amount;
     }
 
     public void MakePaper()
@@ -123,10 +138,15 @@ public class GameManager : MonoBehaviour
 
                     foreach(ShopItem shopItem in canvases[(int)item.resource].GetComponentsInChildren<ShopItem>())
                     {
-                        shopItem.cost = (int)(shopItem.cost * ((10 -item.value)/10.0));
+                        shopItem.cost = Mathf.Max(1, (int)(shopItem.cost * ((10 - item.value) / 10.0)));
                         shopItem.UpdateCost();
                     }
                     break;
+
+                case ShopOptions.AutoclickPower:
+                    UpgradeAutoClickPower(item.valueScaling);
+                    break;
+
                 default:
                     break;
             }
