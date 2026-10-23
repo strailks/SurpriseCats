@@ -10,6 +10,7 @@ public class ShopItem : MonoBehaviour
     public int value = 1;
     public int valueScaling = 1;
     public ShopOptions option;
+    public Resource resource;
 
     private Button button;
     private TextMeshProUGUI priceText;
