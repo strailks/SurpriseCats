@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
     public GameObject[] canvases;
 
     private int clickPower = 1;
-    private int autoClickPower = 1;
+    public int autoClickPower = 1;
     private AutoClicker autoClicker;
     private int totalLumber = 0;
 
