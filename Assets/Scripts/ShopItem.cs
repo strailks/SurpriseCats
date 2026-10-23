@@ -50,11 +50,23 @@ public class ShopItem : MonoBehaviour
 
     private void UpdateCost()
     {
-        priceText.text = cost.ToString();
+        priceText.text = ToScience(cost);
     }
 
     private void UpdateValue()
     {
-        valueText.text = itemName + " " + value.ToString();
+        valueText.text = itemName + " " + ToScience(value);
+    }
+
+    private string ToScience(int num)
+    {
+        if (num > 1000)
+        {
+            return num.ToString("E2");
+        }
+        else
+        {
+            return num.ToString();
+        }
     }
 }

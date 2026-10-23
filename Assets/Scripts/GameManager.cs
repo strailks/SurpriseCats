@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     #endregion
 
     public GameObject treeText, paperText, cardText;
+    public TextMeshProUGUI[] statTexts;
     public int trees = 0;
     public int paper = 0;
     public int cards = 0;
@@ -33,6 +34,7 @@ public class GameManager : MonoBehaviour
 
     private int clickPower = 1;
     private AutoClicker autoClicker;
+    private int totalLumber = 0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -51,6 +53,8 @@ public class GameManager : MonoBehaviour
     {
         trees += clickPower;
         UpdateTrees();
+        totalLumber += clickPower;
+        UpdateStats();
     }
 
     public void MakePaper()
@@ -89,17 +93,19 @@ public class GameManager : MonoBehaviour
             {
                 case Resource.Wood:
                     trees -= price;
+                    UpdateTrees();
                     break;
                 case Resource.Paper:
+                    UpdatePaper();
                     paper -= price;
                     break;
                 case Resource.Card:
+                    UpdateCards();
                     cards -= price;
                     break;
                 default:
                     break;
             }
-            UpdateTrees();
             item.value += item.valueScaling;
             switch (item.option)
             {
@@ -127,17 +133,17 @@ public class GameManager : MonoBehaviour
 
     private void UpdateTrees()
     {
-        treeText.GetComponent<TextMeshProUGUI>().text = trees.ToString();
+        treeText.GetComponent<TextMeshProUGUI>().text = ToScience(trees);
     }
 
     private void UpdatePaper()
     {
-        paperText.GetComponent<TextMeshProUGUI>().text = paper.ToString();
+        paperText.GetComponent<TextMeshProUGUI>().text = ToScience(paper);
     }
 
     private void UpdateCards()
     {
-        cardText.GetComponent<TextMeshProUGUI>().text = cards.ToString();
+        cardText.GetComponent<TextMeshProUGUI>().text = ToScience(cards);
     }
 
     public int GetClickPower()
@@ -150,6 +156,24 @@ public class GameManager : MonoBehaviour
         canvases[(int)activePanel].SetActive(false);
         canvases[resource].SetActive(true);
         activePanel = (Resource)resource;
+    }
+
+    private void UpdateStats()
+    {
+        statTexts[0].text = (totalLumber / 10).ToString();
+        statTexts[1].text = (totalLumber / 10000).ToString();
+    }
+
+    private string ToScience(int num)
+    {
+        if (num > 1000)
+        {
+            return num.ToString("E2");
+        }
+        else
+        {
+            return num.ToString();
+        }
     }
 }
 
