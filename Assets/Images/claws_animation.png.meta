@@ -1,0 +1,886 @@
+fileFormatVersion: 2
+guid: b760a6f9813eb83489d4750f8d1f8c63
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2419922051181953410
+    second: claws_animation_0
+  - first:
+      213: -5303738856622906099
+    second: claws_animation_1
+  - first:
+      213: -8052947107509567618
+    second: claws_animation_2
+  - first:
+      213: -1594420318626151111
+    second: claws_animation_3
+  - first:
+      213: -7445733223589418319
+    second: claws_animation_4
+  - first:
+      213: 5873685731941166298
+    second: claws_animation_5
+  - first:
+      213: 5230132566315477924
+    second: claws_animation_6
+  - first:
+      213: -7511781455330149503
+    second: claws_animation_7
+  - first:
+      213: -7313019128269993091
+    second: claws_animation_8
+  - first:
+      213: -4916449613013116932
+    second: claws_animation_9
+  - first:
+      213: 1191261052805740188
+    second: claws_animation_10
+  - first:
+      213: 8528628931359952210
+    second: claws_animation_11
+  - first:
+      213: 150912503358272467
+    second: claws_animation_12
+  - first:
+      213: 7966081900110287848
+    second: claws_animation_13
+  - first:
+      213: -9148201409760897725
+    second: claws_animation_14
+  - first:
+      213: -3576101775776207466
+    second: claws_animation_15
+  - first:
+      213: 6582987005899020149
+    second: claws_animation_16
+  - first:
+      213: 853964202459870534
+    second: claws_animation_17
+  - first:
+      213: -7187432361095963521
+    second: claws_animation_18
+  - first:
+      213: 8424050796391497062
+    second: claws_animation_19
+  - first:
+      213: -227810007678726768
+    second: claws_animation_20
+  - first:
+      213: -3041895338140820962
+    second: claws_animation_21
+  - first:
+      213: -5843791916915649767
+    second: claws_animation_22
+  - first:
+      213: -6187391694338499348
+    second: claws_animation_23
+  - first:
+      213: -8270151461784818512
+    second: claws_animation_24
+  - first:
+      213: -7318528893448230224
+    second: claws_animation_25
+  - first:
+      213: 7839046530732821591
+    second: claws_animation_26
+  - first:
+      213: -2715330045977585486
+    second: claws_animation_27
+  - first:
+      213: 7646679276951539121
+    second: claws_animation_28
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: claws_animation_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 26
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7e3a2b37b5ba6ed0800000000000000
+      internalID: -2419922051181953410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: claws_animation_1
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 22
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d052e8d3c955566b0800000000000000
+      internalID: -5303738856622906099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: claws_animation_2
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 26
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7ff1e5a54f2e3090800000000000000
+      internalID: -8052947107509567618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: claws_animation_3
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 29
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9358f95fa2b7fd9e0800000000000000
+      internalID: -1594420318626151111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: claws_animation_4
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 16
+        width: 10
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bae0a315117ba890800000000000000
+      internalID: -7445733223589418319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: claws_animation_5
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 20
+        width: 11
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adc22a69d06838150800000000000000
+      internalID: 5873685731941166298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: claws_animation_6
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 24
+        width: 9
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4abaf6fcbd9259840800000000000000
+      internalID: 5230132566315477924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: claws_animation_7
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 14
+        width: 11
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18bfda4c09ac0c790800000000000000
+      internalID: -7511781455330149503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: claws_animation_8
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 18
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7b84df49dfe28a90800000000000000
+      internalID: -7313019128269993091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: claws_animation_9
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 22
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf71f3c102345cbb0800000000000000
+      internalID: -4916449613013116932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: claws_animation_10
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 18
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c967e3fad95388010800000000000000
+      internalID: 1191261052805740188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: claws_animation_11
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 22
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25d44d293d6cb5670800000000000000
+      internalID: 8528628931359952210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: claws_animation_12
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 14
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d3b5da4f16281200800000000000000
+      internalID: 150912503358272467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: claws_animation_13
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 28
+        width: 37
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e31eb338453d8e60800000000000000
+      internalID: 7966081900110287848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: claws_animation_14
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 26
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 345597d794f0b0180800000000000000
+      internalID: -9148201409760897725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: claws_animation_15
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 22
+        width: 8
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69d2736c1622f5ec0800000000000000
+      internalID: -3576101775776207466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: claws_animation_16
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 25
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5779f9fbdc77b5b50800000000000000
+      internalID: 6582987005899020149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: claws_animation_17
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 21
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 645358aeae3e9db00800000000000000
+      internalID: 853964202459870534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: claws_animation_18
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 16
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7c5ab5295c114c90800000000000000
+      internalID: -7187432361095963521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: claws_animation_19
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 24
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66df2c8119d38e470800000000000000
+      internalID: 8424050796391497062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: claws_animation_20
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 19
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09dc7084108a6dcf0800000000000000
+      internalID: -227810007678726768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: claws_animation_21
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 15
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1a133e7e4409c5d0800000000000000
+      internalID: -3041895338140820962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: claws_animation_22
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 24
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91391fa963ea6eea0800000000000000
+      internalID: -5843791916915649767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: claws_animation_23
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 19
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cec50c44908f12aa0800000000000000
+      internalID: -6187391694338499348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: claws_animation_24
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 24
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bc63a900158a3d80800000000000000
+      internalID: -8270151461784818512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: claws_animation_25
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 14
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bae5932fbc5f6a90800000000000000
+      internalID: -7318528893448230224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: claws_animation_26
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 15
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75c86126943e9cc60800000000000000
+      internalID: 7839046530732821591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: claws_animation_27
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 19
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b89f89a5b5315ad0800000000000000
+      internalID: -2715330045977585486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: claws_animation_28
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 15
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bd890ed9467e1a60800000000000000
+      internalID: 7646679276951539121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      claws_animation_0: -2419922051181953410
+      claws_animation_1: -5303738856622906099
+      claws_animation_10: 1191261052805740188
+      claws_animation_11: 8528628931359952210
+      claws_animation_12: 150912503358272467
+      claws_animation_13: 7966081900110287848
+      claws_animation_14: -9148201409760897725
+      claws_animation_15: -3576101775776207466
+      claws_animation_16: 6582987005899020149
+      claws_animation_17: 853964202459870534
+      claws_animation_18: -7187432361095963521
+      claws_animation_19: 8424050796391497062
+      claws_animation_2: -8052947107509567618
+      claws_animation_20: -227810007678726768
+      claws_animation_21: -3041895338140820962
+      claws_animation_22: -5843791916915649767
+      claws_animation_23: -6187391694338499348
+      claws_animation_24: -8270151461784818512
+      claws_animation_25: -7318528893448230224
+      claws_animation_26: 7839046530732821591
+      claws_animation_27: -2715330045977585486
+      claws_animation_28: 7646679276951539121
+      claws_animation_3: -1594420318626151111
+      claws_animation_4: -7445733223589418319
+      claws_animation_5: 5873685731941166298
+      claws_animation_6: 5230132566315477924
+      claws_animation_7: -7511781455330149503
+      claws_animation_8: -7313019128269993091
+      claws_animation_9: -4916449613013116932
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

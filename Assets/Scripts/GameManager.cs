@@ -3,7 +3,7 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    #region
+    #region Instance
     public static GameManager Instance { get; private set; }
     private void Awake()
     {
@@ -20,8 +20,16 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
-    public GameObject treeText; 
-    public int money = 0;
+    public GameObject treeText, paperText, cardText;
+    public int trees = 0;
+    public int paper = 0;
+    public int cards = 0;
+
+    public int treeConversion = 10;
+    public int paperConversion = 10;
+
+    public Resource activePanel = Resource.Wood;
+    public GameObject[] canvases;
 
     private int clickPower = 1;
     private AutoClicker autoClicker;
@@ -29,7 +37,7 @@ public class GameManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        UpdateMoney();
+        UpdateTrees();
         autoClicker = GetComponent<AutoClicker>();
     }
 
@@ -39,29 +47,59 @@ public class GameManager : MonoBehaviour
         
     }
 
-    //public void AddTreesChopped(int _trees)
-    //{
-    //    money += _trees;
-    //    UpdateMoney();
-    //}
-
     public void ChopTree()
     {
-        money += clickPower;
-        UpdateMoney();
+        trees += clickPower;
+        UpdateTrees();
+    }
+
+    public void MakePaper()
+    {
+        if(trees >= treeConversion)
+        {
+            paper++;
+            trees -= treeConversion;
+            UpdateTrees();
+            UpdatePaper();
+        }
+    }
+
+    public void MakeCard()
+    {
+        if (paper >= paperConversion)
+        {
+            cards++;
+            paper -= paperConversion;
+            UpdatePaper();
+            UpdateCards();
+        }
     }
 
     public int GetMoney()
     {
-        return money;
+        return trees;
     }
 
     public bool BuyItem(int price, ShopItem item)
     {
-        if(price <= money)
+        int _compValue = (item.resource == Resource.Wood ? trees : (item.resource == Resource.Paper ? paper : cards));
+        if(price <= _compValue)
         {
-            money -= price;
-            UpdateMoney();
+            switch (item.resource)  
+            {
+                case Resource.Wood:
+                    trees -= price;
+                    break;
+                case Resource.Paper:
+                    paper -= price;
+                    break;
+                case Resource.Card:
+                    cards -= price;
+                    break;
+                default:
+                    break;
+            }
+            UpdateTrees();
             item.value += item.valueScaling;
             switch (item.option)
             {
@@ -69,11 +107,11 @@ public class GameManager : MonoBehaviour
                     clickPower = item.value;
                     break;
                 case ShopOptions.Autoclick:
-                    if(!autoClicker.isOn)
+                    if(!autoClicker.IsResourceOn(item.resource))
                     {
-                        autoClicker.StartAutoClicker();
+                        autoClicker.StartAutoClicker(item.resource);
                     }
-                    autoClicker.timeBetweenClicks = item.value;
+                    autoClicker.SetTimeBetween(item.resource, item.value);
                     break;
                 default:
                     break;
@@ -87,13 +125,35 @@ public class GameManager : MonoBehaviour
         return false;
     }
 
-    private void UpdateMoney()
+    private void UpdateTrees()
     {
-        treeText.GetComponent<TextMeshProUGUI>().text = money.ToString();
+        treeText.GetComponent<TextMeshProUGUI>().text = trees.ToString();
+    }
+
+    private void UpdatePaper()
+    {
+        paperText.GetComponent<TextMeshProUGUI>().text = paper.ToString();
+    }
+
+    private void UpdateCards()
+    {
+        cardText.GetComponent<TextMeshProUGUI>().text = cards.ToString();
     }
 
     public int GetClickPower()
     {
         return clickPower;
     }
+
+    public void ChangeActiveCanvas(int resource)
+    {
+        canvases[(int)activePanel].SetActive(false);
+        canvases[resource].SetActive(true);
+        activePanel = (Resource)resource;
+    }
+}
+
+public enum Resource
+{
+    Wood, Paper, Card
 }
