@@ -34,7 +34,7 @@ public class ShopItem : MonoBehaviour
     {
         
     }
-
+    // Buy the item if the player has enough money
     public void BuyItem()
     {
         if(manager.GetMoney() >= cost)
@@ -48,16 +48,19 @@ public class ShopItem : MonoBehaviour
         }
     }
 
+    // Update the cost text
     public void UpdateCost()
     {
         priceText.text = ToScience(cost);
     }
 
+    // Update the value text
     private void UpdateValue()
     {
         valueText.text = itemName + " " + ToScience(value);
     }
 
+    // Convert a number to scientific notation if it is greater than 1000
     private string ToScience(int num)
     {
         if (num > 1000)
