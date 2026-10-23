@@ -1,14 +1,20 @@
 using UnityEngine;
 
 public class AutoClicker : MonoBehaviour
+
+    // Resources active?
 {
     public bool isTreeOn = false;
     public bool isPaperOn = false;
     public bool isCardOn = false;
 
+    // Time between clicks in milliseconds
+
     public int timeBetweenTreeClicks = 100;
     public int timeBetweenPaperClicks = 100;
     public int timeBetweenCardClicks = 100;
+
+    // Last click time
 
     private float lastTreeClick;
     private float lastPaperClick;
@@ -26,6 +32,8 @@ public class AutoClicker : MonoBehaviour
     {
         
     }
+
+    // FixedUpdate is called at a fixed interval and is independent of frame rate. Put physics code here.
 
     private void FixedUpdate()
     {
@@ -55,6 +63,8 @@ public class AutoClicker : MonoBehaviour
         }
     }
 
+    // Start the auto clicker for a specific resource
+
     public void StartAutoClicker(Resource resource)
     {
         switch (resource)
@@ -76,6 +86,8 @@ public class AutoClicker : MonoBehaviour
         }
     }
 
+    // Stop the auto clicker for a specific resource
+
     public bool IsResourceOn(Resource resouce)
     {
         switch(resouce)
@@ -95,6 +107,7 @@ public class AutoClicker : MonoBehaviour
         }
     }
 
+    // Stop the auto clicker for a specific resource
     public void SetTimeBetween(Resource resource, int timeBetween)
     {
         switch (resource)
