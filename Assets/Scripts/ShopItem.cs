@@ -5,7 +5,7 @@ using TMPro;
 public class ShopItem : MonoBehaviour
 {
     public int cost = 10;
-    public int costScaling = 2;
+    public float costScaling = 2;
     public string itemName = "Click Power";
     public int value = 1;
     public int valueScaling = 1;
@@ -41,7 +41,7 @@ public class ShopItem : MonoBehaviour
         {
             if (manager.BuyItem(cost, this))
             {
-                cost *= costScaling;
+                cost *= (int)costScaling;
                 UpdateCost();
                 UpdateValue();
             }
