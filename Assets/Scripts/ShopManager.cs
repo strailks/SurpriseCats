@@ -17,5 +17,5 @@ public class ShopManager : MonoBehaviour
 
 public enum ShopOptions
 {
-    ClickPower, Autoclick
+    ClickPower, Autoclick, Cheaper
 }

@@ -41,7 +41,7 @@ public class ShopItem : MonoBehaviour
         {
             if (manager.BuyItem(cost, this))
             {
-                cost *= (int)costScaling;
+                cost = (int)(cost * costScaling);
                 UpdateCost();
                 UpdateValue();
             }
