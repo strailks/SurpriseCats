@@ -48,7 +48,7 @@ public class ShopItem : MonoBehaviour
         }
     }
 
-    private void UpdateCost()
+    public void UpdateCost()
     {
         priceText.text = ToScience(cost);
     }

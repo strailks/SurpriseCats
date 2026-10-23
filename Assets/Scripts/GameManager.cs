@@ -119,6 +119,14 @@ public class GameManager : MonoBehaviour
                     }
                     autoClicker.SetTimeBetween(item.resource, item.value);
                     break;
+                case ShopOptions.Cheaper:
+
+                    foreach(ShopItem shopItem in canvases[(int)item.resource].GetComponentsInChildren<ShopItem>())
+                    {
+                        shopItem.cost = (int)(shopItem.cost * ((10 -item.value)/10.0));
+                        shopItem.UpdateCost();
+                    }
+                    break;
                 default:
                     break;
             }
