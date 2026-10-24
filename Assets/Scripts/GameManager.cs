@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour
 {
@@ -37,6 +38,9 @@ public class GameManager : MonoBehaviour
     private AutoClicker autoClicker;
     private int totalLumber = 0;
 
+    public bool isPaused = false;
+    public GameObject pauseCanvas;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -47,7 +51,10 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Keyboard.current.escapeKey.wasPressedThisFrame)
+        {
+            ChangePauseState();
+        }
     }
 
     public void ChopTree()
@@ -202,6 +209,12 @@ public class GameManager : MonoBehaviour
         {
             return num.ToString();
         }
+    }
+
+    public void ChangePauseState()
+    {
+        isPaused = !isPaused;
+        pauseCanvas.SetActive(isPaused);
     }
 }
 
