@@ -1,7 +1,11 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.InputSystem;
+<<<<<<< HEAD
+=======
 using System.Collections;
+using UnityEngine.SceneManagement;
+>>>>>>> 206a6d0ec7b03a7f2b393055671cdd72878bff77
 
 public class GameManager : MonoBehaviour
 {
@@ -255,6 +259,11 @@ private void PlayClawMarks()
     {
         isPaused = !isPaused;
         pauseCanvas.SetActive(isPaused);
+    }
+
+    public void GoToMainMenu()
+    {
+        SceneManager.LoadScene(1);
     }
 }
 
