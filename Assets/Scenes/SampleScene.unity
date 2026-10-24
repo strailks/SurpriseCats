@@ -4016,8 +4016,8 @@ MonoBehaviour:
   autoClickPower: 1
   isPaused: 0
   pauseCanvas: {fileID: 1387873613}
-  clawMarks: {fileID: 0}
-  clawMarksDuration: 0.5
+  clawMarks: {fileID: 1822561829}
+  clawMarksDuration: 1.33
 --- !u!114 &786374140
 MonoBehaviour:
   m_ObjectHideFlags: 0

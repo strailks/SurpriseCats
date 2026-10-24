@@ -37,14 +37,14 @@ public class GameManager : MonoBehaviour
 
     private int clickPower = 1;
     public int autoClickPower = 1;
-    private AutoClicker autoClicker;
+    public AutoClicker autoClicker;
     private int totalLumber = 0;
 
     public bool isPaused = false;
     public GameObject pauseCanvas;
 
     public GameObject clawMarks;
-    public float clawMarksDuration = 0.5f;
+    public float clawMarksDuration = 2f;
 
     private Animator ClawMarksAnimator;
     private Coroutine clawMarksCoroutine;

@@ -48,6 +48,18 @@ public class ShopItem : MonoBehaviour
         }
     }
 
+    public void StartupCost(int _cost)
+    {
+        cost = _cost;
+        UpdateCost();
+    }
+
+    public void StartupValue(int _value)
+    {
+        value = _value;
+        UpdateValue();
+    }
+
     // Update the cost text
     public void UpdateCost()
     {
