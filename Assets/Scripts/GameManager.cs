@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 using System.Collections;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
+using System;
 
 public class GameManager : MonoBehaviour
 {
@@ -29,6 +30,7 @@ public class GameManager : MonoBehaviour
     public int trees = 0;
     public int paper = 0;
     public int cards = 0;
+    public int totalCardsCreated;
 
     public int treeConversion = 10;
     public int paperConversion = 10;
@@ -51,6 +53,7 @@ public class GameManager : MonoBehaviour
 
     private Animator ClawMarksAnimator;
     private Coroutine clawMarksCoroutine;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -87,7 +90,7 @@ public class GameManager : MonoBehaviour
         PlayClawMarks();
     }
 
-private void PlayClawMarks()
+    private void PlayClawMarks()
     {
         if (clawMarks == null || ClawMarksAnimator == null)
             return;
@@ -163,6 +166,7 @@ private void PlayClawMarks()
         if (paper >= paperConversion)
         {
             cards+= clickPowers[2];
+            totalCardsCreated++;
             paper -= paperConversion;
             UpdatePaper();
             UpdateCards();
@@ -295,6 +299,8 @@ private void PlayClawMarks()
     {
         SceneManager.LoadScene(1);
     }
+
+
 }
 
 public enum Resource
