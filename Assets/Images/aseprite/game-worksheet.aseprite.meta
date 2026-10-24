@@ -129,7 +129,7 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: game-worksheet
     originalName: 
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.49947917, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -137,8 +137,8 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 640
-      height: 480
+      width: 960
+      height: 540
     spriteID: de5ee4aa3eee39645b07ae86c41e40bd
     spriteBone: []
     spriteOutline: []
@@ -169,8 +169,8 @@ ScriptedImporter:
       cellRect:
         x: 0
         y: 0
-        width: 640
-        height: 480
+        width: 960
+        height: 540
       spriteId: de5ee4aa3eee39645b07ae86c41e40bd
     linkedCells: []
     tileCells: []
@@ -180,5 +180,5 @@ ScriptedImporter:
   platformSettings: []
   generatePhysicsShape: 0
   secondarySpriteTextures: []
-  previousTextureSize: {x: 1024, y: 512}
-  canvasSize: {x: 640, y: 480}
+  previousTextureSize: {x: 1024, y: 1024}
+  canvasSize: {x: 959, y: 540}
