@@ -3455,6 +3455,7 @@ MonoBehaviour:
   trees: 100
   paper: 0
   cards: 0
+  totalCardsCreated: 0
   treeConversion: 10
   paperConversion: 10
   activePanel: 0
@@ -7089,8 +7090,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 285.4, y: -44.7}
-  m_SizeDelta: {x: -664.056, y: 76.7296}
+  m_AnchoredPosition: {x: 287.26, y: -40.843277}
+  m_SizeDelta: {x: -574.53, y: 80.6861}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1670101174
 MonoBehaviour:
@@ -7109,7 +7110,7 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 0
+  m_ChildAlignment: 4
   m_Spacing: 0
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
