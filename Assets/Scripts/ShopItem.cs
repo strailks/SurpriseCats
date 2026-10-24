@@ -71,7 +71,7 @@ public class ShopItem : MonoBehaviour
     // Update the value text
     private void UpdateValue()
     {
-        valueText.text = itemName + " " + ToScience(value) + " costs " + ToScience(cost);
+        valueText.text = itemName + " " + ToScience(value) + " Costs " + ToScience(cost);
     }
 
     // Convert a number to scientific notation if it is greater than 1000
