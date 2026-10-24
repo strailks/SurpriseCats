@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
 
     private int clickPower = 1;
     public int autoClickPower = 1;
-    private AutoClicker autoClicker;
+    public AutoClicker autoClicker;
     private int totalLumber = 0;
 
     public bool isPaused = false;
