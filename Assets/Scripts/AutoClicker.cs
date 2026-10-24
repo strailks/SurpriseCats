@@ -94,16 +94,12 @@ public class AutoClicker : MonoBehaviour
         {
             case Resource.Wood:
                 return isTreeOn;
-                break;
             case Resource.Paper:
                 return isPaperOn;
-                break;
             case Resource.Card:
                 return isCardOn;
-                break;
             default:
                 return false;
-                break;
         }
     }
 
