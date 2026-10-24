@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
     public GameObject pauseCanvas;
 
     public GameObject clawMarks;
-    public float clawMarksDuration = 0.5f;
+    public float clawMarksDuration = 2f;
 
     private Animator ClawMarksAnimator;
     private Coroutine clawMarksCoroutine;

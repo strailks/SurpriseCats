@@ -106,6 +106,7 @@ public class AutoClicker : MonoBehaviour
     // Stop the auto clicker for a specific resource
     public void SetTimeBetween(Resource resource, int timeBetween)
     {
+        timeBetween = Mathf.Max(1, timeBetween);
         switch (resource)
         {
             case Resource.Wood:
