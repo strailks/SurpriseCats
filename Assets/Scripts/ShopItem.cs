@@ -13,7 +13,7 @@ public class ShopItem : MonoBehaviour
     public Resource resource;
 
     private Button button;
-    private TextMeshProUGUI priceText;
+    //private TextMeshProUGUI priceText;
     private TextMeshProUGUI valueText;
     private GameManager manager;
 
@@ -22,11 +22,12 @@ public class ShopItem : MonoBehaviour
     {
         button = GetComponentInChildren<Button>();
         button.onClick.AddListener(BuyItem);
-        priceText = button.GetComponentInChildren<TextMeshProUGUI>();
-        priceText.text = cost.ToString();
-        valueText = GetComponentsInChildren<TextMeshProUGUI>()[1];
+        //priceText = button.GetComponentInChildren<TextMeshProUGUI>();
+        //priceText.text = cost.ToString();
+        valueText = GetComponentsInChildren<TextMeshProUGUI>()[0];
         valueText.text = itemName + " " + value.ToString();
         manager = GameManager.Instance;
+        UpdateValue();
     }
 
     // Update is called once per frame
@@ -63,13 +64,14 @@ public class ShopItem : MonoBehaviour
     // Update the cost text
     public void UpdateCost()
     {
-        priceText.text = ToScience(cost);
+        //priceText.text = ToScience(cost);
+        //priceText.text = "";
     }
 
     // Update the value text
     private void UpdateValue()
     {
-        valueText.text = itemName + " " + ToScience(value);
+        valueText.text = itemName + " " + ToScience(value) + " Costs " + ToScience(cost);
     }
 
     // Convert a number to scientific notation if it is greater than 1000

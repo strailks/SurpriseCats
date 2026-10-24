@@ -3,6 +3,8 @@ using TMPro;
 using UnityEngine.InputSystem;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
+using System;
 
 public class GameManager : MonoBehaviour
 {
@@ -28,6 +30,7 @@ public class GameManager : MonoBehaviour
     public int trees = 0;
     public int paper = 0;
     public int cards = 0;
+    public int totalCardsCreated;
 
     public int treeConversion = 10;
     public int paperConversion = 10;
@@ -36,7 +39,9 @@ public class GameManager : MonoBehaviour
     public GameObject[] canvases;
 
     private int clickPower = 1;
+    private List<int> clickPowers = new List<int> { 1, 1, 1 };
     public int autoClickPower = 1;
+    private List<int> autoClickPowers = new List<int> { 1, 1, 1 };
     public AutoClicker autoClicker;
     private int totalLumber = 0;
 
@@ -48,6 +53,7 @@ public class GameManager : MonoBehaviour
 
     private Animator ClawMarksAnimator;
     private Coroutine clawMarksCoroutine;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -74,15 +80,17 @@ public class GameManager : MonoBehaviour
     public void ChopTree()
     {
 
-        trees += clickPower;
+        //trees += clickPower;
+        trees += clickPowers[0];
         UpdateTrees();
-        totalLumber += clickPower;
+        //totalLumber += clickPower;
+        totalLumber += clickPowers[0];
         UpdateStats();
 
         PlayClawMarks();
     }
 
-private void PlayClawMarks()
+    private void PlayClawMarks()
     {
         if (clawMarks == null || ClawMarksAnimator == null)
             return;
@@ -108,26 +116,48 @@ private void PlayClawMarks()
     }
     public void AutoChopTree()
     {
-        trees += autoClickPower;
+        trees += autoClickPowers[0];
         UpdateTrees();
 
-        totalLumber += autoClickPower;
+        totalLumber += autoClickPowers[0];
         UpdateStats();
     }
 
-    public void UpgradeAutoClickPower(int amount)
+    public void UpgradeAutoClickPower(ShopItem _item)
     {
-        autoClickPower += amount;
+        autoClickPowers[(int)_item.resource] += _item.value;
     }
 
     public void MakePaper()
     {
         if(trees >= treeConversion)
         {
-            paper++;
+            paper+= clickPowers[1];
             trees -= treeConversion;
             UpdateTrees();
             UpdatePaper();
+        }
+    }
+
+    public void AutoMakePaper()
+    {
+        if (trees >= treeConversion)
+        {
+            paper += autoClickPowers[1];
+            trees -= treeConversion;
+            UpdateTrees();
+            UpdatePaper();
+        }
+    }
+
+    public void AutoMakeCard()
+    {
+        if (paper >= paperConversion)
+        {
+            cards += autoClickPowers[2];
+            paper -= paperConversion;
+            UpdatePaper();
+            UpdateCards();
         }
     }
 
@@ -135,7 +165,8 @@ private void PlayClawMarks()
     {
         if (paper >= paperConversion)
         {
-            cards++;
+            cards+= clickPowers[2];
+            totalCardsCreated++;
             paper -= paperConversion;
             UpdatePaper();
             UpdateCards();
@@ -178,7 +209,7 @@ private void PlayClawMarks()
             switch (item.option)
             {
                 case ShopOptions.ClickPower:
-                    clickPower = item.value;
+                    clickPowers[(int)item.resource] = item.value;
                     break;
 
                 case ShopOptions.Autoclick:
@@ -199,7 +230,7 @@ private void PlayClawMarks()
                     break;
 
                 case ShopOptions.AutoclickPower:
-                    UpgradeAutoClickPower(item.valueScaling);
+                    UpgradeAutoClickPower(item);
                     break;
 
                 default:
@@ -268,6 +299,8 @@ private void PlayClawMarks()
     {
         SceneManager.LoadScene(1);
     }
+
+
 }
 
 public enum Resource
