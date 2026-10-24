@@ -209,7 +209,7 @@ public class GameManager : MonoBehaviour
             switch (item.option)
             {
                 case ShopOptions.ClickPower:
-                    clickPower = item.value;
+                    clickPowers[(int)item.resource] = item.value;
                     break;
 
                 case ShopOptions.Autoclick:
