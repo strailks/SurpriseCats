@@ -113,3 +113,8 @@ public class SaveScript : MonoBehaviour
         }
     }
 }
+
+public class SaveData
+{
+
+}

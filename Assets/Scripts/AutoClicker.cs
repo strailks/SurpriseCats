@@ -49,7 +49,7 @@ public class AutoClicker : MonoBehaviour
         {
             if (Time.time - lastPaperClick >= timeBetweenPaperClicks)
             {
-                manager.MakePaper();
+                manager.AutoMakePaper();
                 lastPaperClick = Time.time;
             }
         }
@@ -57,7 +57,7 @@ public class AutoClicker : MonoBehaviour
         {
             if (Time.time - lastCardClick >= timeBetweenCardClicks)
             {
-                manager.MakeCard();
+                manager.AutoMakeCard();
                 lastCardClick = Time.time;
             }
         }

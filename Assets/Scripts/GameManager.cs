@@ -3,6 +3,7 @@ using TMPro;
 using UnityEngine.InputSystem;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
@@ -36,7 +37,9 @@ public class GameManager : MonoBehaviour
     public GameObject[] canvases;
 
     private int clickPower = 1;
+    private List<int> clickPowers = new List<int> { 1, 1, 1 };
     public int autoClickPower = 1;
+    private List<int> autoClickPowers = new List<int> { 1, 1, 1 };
     public AutoClicker autoClicker;
     private int totalLumber = 0;
 
@@ -74,9 +77,11 @@ public class GameManager : MonoBehaviour
     public void ChopTree()
     {
 
-        trees += clickPower;
+        //trees += clickPower;
+        trees += clickPowers[0];
         UpdateTrees();
-        totalLumber += clickPower;
+        //totalLumber += clickPower;
+        totalLumber += clickPowers[0];
         UpdateStats();
 
         PlayClawMarks();
@@ -108,26 +113,48 @@ private void PlayClawMarks()
     }
     public void AutoChopTree()
     {
-        trees += autoClickPower;
+        trees += autoClickPowers[0];
         UpdateTrees();
 
-        totalLumber += autoClickPower;
+        totalLumber += autoClickPowers[0];
         UpdateStats();
     }
 
-    public void UpgradeAutoClickPower(int amount)
+    public void UpgradeAutoClickPower(ShopItem _item)
     {
-        autoClickPower += amount;
+        autoClickPowers[(int)_item.resource] += _item.value;
     }
 
     public void MakePaper()
     {
         if(trees >= treeConversion)
         {
-            paper++;
+            paper+= clickPowers[1];
             trees -= treeConversion;
             UpdateTrees();
             UpdatePaper();
+        }
+    }
+
+    public void AutoMakePaper()
+    {
+        if (trees >= treeConversion)
+        {
+            paper += autoClickPowers[1];
+            trees -= treeConversion;
+            UpdateTrees();
+            UpdatePaper();
+        }
+    }
+
+    public void AutoMakeCard()
+    {
+        if (paper >= paperConversion)
+        {
+            cards += autoClickPowers[2];
+            paper -= paperConversion;
+            UpdatePaper();
+            UpdateCards();
         }
     }
 
@@ -135,7 +162,7 @@ private void PlayClawMarks()
     {
         if (paper >= paperConversion)
         {
-            cards++;
+            cards+= clickPowers[2];
             paper -= paperConversion;
             UpdatePaper();
             UpdateCards();
@@ -199,7 +226,7 @@ private void PlayClawMarks()
                     break;
 
                 case ShopOptions.AutoclickPower:
-                    UpgradeAutoClickPower(item.valueScaling);
+                    UpgradeAutoClickPower(item);
                     break;
 
                 default:
