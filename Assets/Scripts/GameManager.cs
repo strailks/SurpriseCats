@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -215,6 +216,11 @@ public class GameManager : MonoBehaviour
     {
         isPaused = !isPaused;
         pauseCanvas.SetActive(isPaused);
+    }
+
+    public void GoToMainMenu()
+    {
+        SceneManager.LoadScene(1);
     }
 }
 
