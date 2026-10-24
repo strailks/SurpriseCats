@@ -149,7 +149,12 @@ private void PlayClawMarks()
 
     public bool BuyItem(int price, ShopItem item)
     {
-        int _compValue = (item.resource == Resource.Wood ? trees : (item.resource == Resource.Paper ? paper : cards));
+        if (item.option == ShopOptions.Autoclick &&
+            item.value + item.valueScaling <1)
+        {
+            return false;
+        }
+            int _compValue = (item.resource == Resource.Wood ? trees : (item.resource == Resource.Paper ? paper : cards));
         if(price <= _compValue)
         {
             switch (item.resource)  
@@ -175,6 +180,7 @@ private void PlayClawMarks()
                 case ShopOptions.ClickPower:
                     clickPower = item.value;
                     break;
+
                 case ShopOptions.Autoclick:
                     if(!autoClicker.IsResourceOn(item.resource))
                     {
@@ -182,6 +188,7 @@ private void PlayClawMarks()
                     }
                     autoClicker.SetTimeBetween(item.resource, item.value);
                     break;
+
                 case ShopOptions.Cheaper:
 
                     foreach(ShopItem shopItem in canvases[(int)item.resource].GetComponentsInChildren<ShopItem>())

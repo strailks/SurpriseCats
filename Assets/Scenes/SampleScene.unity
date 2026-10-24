@@ -4014,6 +4014,7 @@ MonoBehaviour:
   - {fileID: 983925372}
   - {fileID: 1787999457}
   autoClickPower: 1
+  autoClicker: {fileID: 0}
   isPaused: 0
   pauseCanvas: {fileID: 1387873613}
   clawMarks: {fileID: 1822561829}
@@ -5228,7 +5229,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShopItem
   cost: 50
-  costScaling: 2
+  costScaling: 1.5
   itemName: Auto Click
   value: 5
   valueScaling: -1
@@ -5428,7 +5429,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShopItem
   cost: 50
-  costScaling: 2
+  costScaling: 1.5
   itemName: Auto Click
   value: 11
   valueScaling: -1
@@ -5918,7 +5919,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShopItem
   cost: 10
-  costScaling: 2
+  costScaling: 1.25
   itemName: Click Power
   value: 1
   valueScaling: 1
@@ -7231,7 +7232,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShopItem
   cost: 50
-  costScaling: 2
+  costScaling: 1.5
   itemName: Auto Click Power
   value: 1
   valueScaling: 1
@@ -9513,7 +9514,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShopItem
   cost: 10
-  costScaling: 2
+  costScaling: 1.5
   itemName: Click Power
   value: 1
   valueScaling: 1
@@ -10336,7 +10337,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShopItem
   cost: 50
-  costScaling: 2
+  costScaling: 1.5
   itemName: Auto Click Power
   value: 1
   valueScaling: 1
