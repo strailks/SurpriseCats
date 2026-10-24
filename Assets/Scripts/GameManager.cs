@@ -204,7 +204,6 @@ private void PlayClawMarks()
         {
             return false;
         }
-        return false;
     }
 
     private void UpdateTrees()
