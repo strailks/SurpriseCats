@@ -1,7 +1,11 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.InputSystem;
+<<<<<<< HEAD
+=======
+using System.Collections;
 using UnityEngine.SceneManagement;
+>>>>>>> 206a6d0ec7b03a7f2b393055671cdd72878bff77
 
 public class GameManager : MonoBehaviour
 {
@@ -42,11 +46,23 @@ public class GameManager : MonoBehaviour
     public bool isPaused = false;
     public GameObject pauseCanvas;
 
+    public GameObject clawMarks;
+    public float clawMarksDuration = 0.5f;
+
+    private Animator ClawMarksAnimator;
+    private Coroutine clawMarksCoroutine;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         UpdateTrees();
         autoClicker = GetComponent<AutoClicker>();
+
+        if (clawMarks != null)
+        {
+            ClawMarksAnimator = clawMarks.GetComponent<Animator>();
+            clawMarks.SetActive(false);
+        }
     }
 
     // Update is called once per frame
@@ -60,12 +76,39 @@ public class GameManager : MonoBehaviour
 
     public void ChopTree()
     {
+
         trees += clickPower;
         UpdateTrees();
         totalLumber += clickPower;
         UpdateStats();
+
+        PlayClawMarks();
     }
 
+private void PlayClawMarks()
+    {
+        if (clawMarks == null || ClawMarksAnimator == null)
+            return;
+
+        if (clawMarksCoroutine != null)
+        {
+            StopCoroutine(clawMarksCoroutine);
+            clawMarksCoroutine = null;
+        }
+
+        clawMarks.SetActive(true);
+        ClawMarksAnimator.Play("Base Layer.ClawMarks", 0, 0f);
+        ClawMarksAnimator.Update(0f);
+        clawMarksCoroutine = StartCoroutine(HideClawMarks());
+    }
+
+    private IEnumerator HideClawMarks()
+    {
+        yield return new WaitForSeconds(clawMarksDuration);
+
+        clawMarks.SetActive(false);
+        clawMarksCoroutine = null;
+    }
     public void AutoChopTree()
     {
         trees += autoClickPower;
