@@ -312,7 +312,7 @@ MonoBehaviour:
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 18
+  m_fontSizeMin: 10
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
@@ -1158,7 +1158,7 @@ MonoBehaviour:
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 18
+  m_fontSizeMin: 10
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
@@ -3688,7 +3688,7 @@ MonoBehaviour:
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 18
+  m_fontSizeMin: 10
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
@@ -5332,7 +5332,7 @@ MonoBehaviour:
   cost: 50
   costScaling: 2
   itemName: Lucky Cat
-  itemDesc: Decreases time between auto clicks
+  itemDesc: Decreases time between auto clicks. First purchase buys the autoclick
   value: 11
   valueScaling: -1
   option: 1
@@ -7959,7 +7959,7 @@ MonoBehaviour:
   cost: 50
   costScaling: 1.5
   itemName: Cat Saw
-  itemDesc: Decreases time between autoclicks
+  itemDesc: Decreases time between autoclicks. First purchase buys the autoclick
   value: 5
   valueScaling: -1
   option: 1
@@ -8539,7 +8539,7 @@ MonoBehaviour:
   cost: 50
   costScaling: 1.5
   itemName: Cat In the Hat
-  itemDesc: Decreases time bwtween auto clicks
+  itemDesc: Decreases time bwtween auto clicks. First purchase buys the autoclick
   value: 11
   valueScaling: -1
   option: 1

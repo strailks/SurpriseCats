@@ -50,6 +50,10 @@ public class ShopItem : MonoBehaviour
                 UpdateValue();
             }
         }
+        if(option == ShopOptions.Autoclick && value == 1)
+        {
+            //GetComponent<Button>().interactable = false;
+        }
     }
 
     public void StartupCost(int _cost)
