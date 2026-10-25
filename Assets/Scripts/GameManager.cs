@@ -5,6 +5,8 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using System;
+using System.Security.Cryptography.X509Certificates;
+using Unity.VisualScripting;
 
 public class GameManager : MonoBehaviour
 {
@@ -56,6 +58,14 @@ public class GameManager : MonoBehaviour
 
     public AudioManager audioManager;
 
+    public GameObject winCanvas;
+    public TextMeshProUGUI winTimeText;
+    public TextMeshProUGUI winMessageText;
+    public AudioSource winAudioSource;
+    public AudioClip winClip;
+    [TextArea] public string winMessage = "The forest is gone, but that is of no concern. You have what is truly important in life. 10,000 Cat TCG cards!";
+    private float playTime = 0f;
+    private bool hasWon = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -73,7 +83,16 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Keyboard.current.escapeKey.wasPressedThisFrame)
+        if (hasWon)
+        {
+            return;
+        }
+
+        if (!isPaused)
+        { 
+            playTime += Time.deltaTime;
+        }
+        if (Keyboard.current.escapeKey.wasPressedThisFrame)
         {
             ChangePauseState();
         }
@@ -157,6 +176,7 @@ public class GameManager : MonoBehaviour
         if (paper >= paperConversion)
         {
             cards += autoClickPowers[2];
+            totalCardsCreated += autoClickPowers[2];
             paper -= paperConversion;
             UpdatePaper();
             UpdateCards();
@@ -168,16 +188,26 @@ public class GameManager : MonoBehaviour
         if (paper >= paperConversion)
         {
             cards+= clickPowers[2];
-            totalCardsCreated++;
+            totalCardsCreated += clickPowers[2];
             paper -= paperConversion;
             UpdatePaper();
             UpdateCards();
         }
     }
 
-    public int GetMoney()
+    public int GetMoney(Resource resource)
     {
-        return trees;
+        switch(resource)
+        {
+            case Resource.Wood:
+                return trees;
+            case Resource.Paper:
+                return paper;
+            case Resource.Card:
+                return cards;
+            default:
+                return -1;
+        }
     }
 
     public bool BuyItem(int price, ShopItem item)
@@ -190,19 +220,19 @@ public class GameManager : MonoBehaviour
             int _compValue = (item.resource == Resource.Wood ? trees : (item.resource == Resource.Paper ? paper : cards));
         if(price <= _compValue)
         {
-            switch (item.resource)  
+            switch (item.resource)
             {
                 case Resource.Wood:
                     trees -= price;
                     UpdateTrees();
                     break;
                 case Resource.Paper:
-                    UpdatePaper();
                     paper -= price;
+                    UpdatePaper();
                     break;
                 case Resource.Card:
-                    UpdateCards();
                     cards -= price;
+                    UpdateCards();
                     break;
                 default:
                     break;
@@ -263,7 +293,7 @@ public class GameManager : MonoBehaviour
 
     public int GetClickPower()
     {
-        return clickPower;
+        return clickPowers[0];
     }
 
     public void ChangeActiveCanvas(int resource)
@@ -299,9 +329,29 @@ public class GameManager : MonoBehaviour
 
     public void GoToMainMenu()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(1);
     }
 
+    public void ShowWinScreen()
+    {
+        if (hasWon) return;
+        hasWon = true;
+
+        int total = Mathf.FloorToInt(playTime);
+        winTimeText.text = $"Time: {total / 3600:00}:{(total % 3600) / 60:00}:{total % 60:00}";
+        winMessageText.text = winMessage;
+
+        pauseCanvas.SetActive(false);
+        winCanvas.SetActive(true);
+
+        if (winAudioSource != null && winClip != null)
+            winAudioSource.PlayOneShot(winClip);
+
+        Time.timeScale = 0f;
+                
+            
+    }
 
 }
 
