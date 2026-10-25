@@ -336,21 +336,27 @@ public class GameManager : MonoBehaviour
     public void ShowWinScreen()
     {
         if (hasWon) return;
+
+        if (winCanvas == null) Debug.LogError("winCanvas is not assigned");
+        if (winTimeText == null) Debug.LogError("winTimeText is not assigned");
+        if (winMessageText == null) Debug.LogError("winMessageText is not assigned");
+        if (pauseCanvas == null) Debug.LogError("pauseCanvas is not assigned");
+
         hasWon = true;
 
-        int total = Mathf.FloorToInt(playTime);
-        winTimeText.text = $"Time: {total / 3600:00}:{(total % 3600) / 60:00}:{total % 60:00}";
-        winMessageText.text = winMessage;
+        if (pauseCanvas != null) pauseCanvas.SetActive(false);
+        if (winCanvas != null) winCanvas.SetActive(true);
 
-        pauseCanvas.SetActive(false);
-        winCanvas.SetActive(true);
+        int total = Mathf.FloorToInt(playTime);
+        if (winTimeText != null)
+            winTimeText.text = $"Time: {total / 3600:00}:{(total % 3600) / 60:00}:{total % 60:00}";
+        if (winMessageText != null)
+            winMessageText.text = winMessage;
 
         if (winAudioSource != null && winClip != null)
             winAudioSource.PlayOneShot(winClip);
 
         Time.timeScale = 0f;
-                
-            
     }
 
 }
