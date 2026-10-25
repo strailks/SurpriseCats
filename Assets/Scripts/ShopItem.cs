@@ -7,6 +7,7 @@ public class ShopItem : MonoBehaviour
     public int cost = 10;
     public float costScaling = 2;
     public string itemName = "Click Power";
+    public string itemDesc = "Click Power";
     public int value = 1;
     public int valueScaling = 1;
     public ShopOptions option;
@@ -24,8 +25,10 @@ public class ShopItem : MonoBehaviour
         button.onClick.AddListener(BuyItem);
         //priceText = button.GetComponentInChildren<TextMeshProUGUI>();
         //priceText.text = cost.ToString();
-        valueText = GetComponentsInChildren<TextMeshProUGUI>()[0];
-        valueText.text = itemName + " " + value.ToString();
+        GetComponentsInChildren<TextMeshProUGUI>()[0].text = itemName;
+        GetComponentsInChildren<TextMeshProUGUI>()[1].text = itemDesc;
+        valueText = GetComponentsInChildren<TextMeshProUGUI>()[2];
+        //valueText.text = itemName + " " + value.ToString();
         manager = GameManager.Instance;
         UpdateValue();
     }
@@ -71,7 +74,7 @@ public class ShopItem : MonoBehaviour
     // Update the value text
     private void UpdateValue()
     {
-        valueText.text = itemName + " " + ToScience(value) + " Costs " + ToScience(cost);
+        valueText.text = "Value: " + ToScience(value) + " Costs: " + ToScience(cost);
     }
 
     // Convert a number to scientific notation if it is greater than 1000
