@@ -34,6 +34,10 @@ public class TreeButton : MonoBehaviour
                 break;
         }
         manager.audioManager.Play("claw1");
+        if(manager.tut.tutorialStep == 5)
+        {
+            manager.tut.StepFive();
+        }
         //manager.AddTreesChopped(manager.GetClickPower());
     }
 }

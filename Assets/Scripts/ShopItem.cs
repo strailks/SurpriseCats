@@ -54,6 +54,10 @@ public class ShopItem : MonoBehaviour
         {
             //GetComponent<Button>().interactable = false;
         }
+        if (GameManager.Instance.GetComponent<Tutorial>().tutorialStep == 2)
+        {
+            GameManager.Instance.GetComponent<Tutorial>().StepTwo();
+        }
     }
 
     public void StartupCost(int _cost)

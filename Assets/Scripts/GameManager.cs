@@ -67,12 +67,14 @@ public class GameManager : MonoBehaviour
     [TextArea] public string winMessage = "The forest is gone, but that is of no concern to you. You have what is truly important in life. 10,000 Cat TCG cards!";
     private float playTime = 0f;
     private bool hasWon = false;
+    public Tutorial tut;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         UpdateTrees();
         autoClicker = GetComponent<AutoClicker>();
+        tut = gameObject.GetComponent<Tutorial>();
 
         if (clawMarks != null)
         {
@@ -110,6 +112,11 @@ public class GameManager : MonoBehaviour
         UpdateStats();
 
         PlayClawMarks();
+
+        if(tut.tutorialStep == 1)
+        {
+            tut.StepOne();
+        }
     }
 
     private void PlayClawMarks()
@@ -188,11 +195,15 @@ public class GameManager : MonoBehaviour
     {
         if (paper >= paperConversion)
         {
-            cards+= clickPowers[2];
+            cards += clickPowers[2];
             totalCardsCreated += clickPowers[2];
             paper -= paperConversion;
             UpdatePaper();
             UpdateCards();
+            if (tut.tutorialStep == 6)
+            {
+                tut.StepSix();
+            }
         }
     }
 
@@ -285,6 +296,10 @@ public class GameManager : MonoBehaviour
     private void UpdateTrees()
     {
         treeText.GetComponent<TextMeshProUGUI>().text = ToScience(trees);
+        if(tut.tutorialStep == 3)
+        {
+            tut.StepThree();
+        }
     }
 
     private void UpdatePaper()
@@ -307,6 +322,11 @@ public class GameManager : MonoBehaviour
         canvases[(int)activePanel].SetActive(false);
         canvases[resource].SetActive(true);
         activePanel = (Resource)resource;
+
+        if(GetComponent<Tutorial>().tutorialStep == 4)
+        {
+            GetComponent<Tutorial>().StepFour();
+        }
     }
 
     private void UpdateStats()

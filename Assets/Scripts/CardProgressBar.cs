@@ -31,7 +31,8 @@ public class CardProgressBar : MonoBehaviour
         }
         else
         {
-            percentText.text = (target * 100f).ToString("F1") + "%";
+            //percentText.text = (target * 100f).ToString("F1") + "%";
+            percentText.text = total.ToString() + " out of 10,000 cards"; 
         }
     }
 }
