@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using UnityEngine.UI;
 
 [System.Serializable]
 public class Sound
@@ -54,14 +55,17 @@ public class AudioManager : MonoBehaviour
         s.source.Play();
     }
 
-    public void SetSFXVolume(float vol)
+    public void SetSFXVolume(Slider vol)
     {
-
+        foreach(Sound s in sounds)
+        {
+            s.source.volume = vol.value;
+        }
     }
 
-    public void SetMusicVolume(float vol)
+    public void SetMusicVolume(Slider vol)
     {
-
+        mainSong.source.volume = vol.value;
     }
 
 
