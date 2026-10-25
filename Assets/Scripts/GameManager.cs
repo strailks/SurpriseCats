@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI winMessageText;
     public AudioSource winAudioSource;
     public AudioClip winClip;
-    [TextArea] public string winMessage = "The forest is gone, but that is of no concern. You have what is truly important in life. 10,000 Cat TCG cards!";
+    [TextArea] public string winMessage = "The forest is gone, but that is of no concern to you. You have what is truly important in life. 10,000 Cat TCG cards!";
     private float playTime = 0f;
     private bool hasWon = false;
 
