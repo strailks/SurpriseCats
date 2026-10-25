@@ -262,7 +262,8 @@ public class GameManager : MonoBehaviour
                     foreach(ShopItem shopItem in canvases[(int)item.resource].GetComponentsInChildren<ShopItem>())
                     {
                         shopItem.cost = Mathf.Max(1, (int)(shopItem.cost * ((10 - item.value) / 10.0)));
-                        shopItem.UpdateCost();
+                        shopItem.UpdateValue();
+                        Debug.Log("frown");
                     }
                     break;
 

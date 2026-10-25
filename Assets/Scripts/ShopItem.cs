@@ -76,7 +76,7 @@ public class ShopItem : MonoBehaviour
     }
 
     // Update the value text
-    private void UpdateValue()
+    public void UpdateValue()
     {
         valueText.text = "Value: " + ToScience(value) + " Costs: " + ToScience(cost);
     }
