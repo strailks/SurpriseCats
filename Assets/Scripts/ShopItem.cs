@@ -80,6 +80,7 @@ public class ShopItem : MonoBehaviour
     // Convert a number to scientific notation if it is greater than 1000
     private string ToScience(int num)
     {
+        /*
         if (num > 1000)
         {
             return num.ToString("E2");
@@ -87,6 +88,8 @@ public class ShopItem : MonoBehaviour
         else
         {
             return num.ToString();
-        }
+        }*/
+
+        return num.ToString();
     }
 }
