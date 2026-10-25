@@ -387,7 +387,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 13929755}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 039399c6724394d46afe14929ce166b9, type: 3}
+  m_Script: {fileID: 11500000, guid: da79a5f63b377934a8adc968380e6813, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CardProgressBar
   Fill: {fileID: 589262829}
@@ -3538,7 +3538,7 @@ MonoBehaviour:
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 1
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
@@ -8424,7 +8424,7 @@ Animator:
   m_GameObject: {fileID: 1822561829}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 84fa9c9df5627e9498996f6ae94e6c19, type: 2}
+  m_Controller: {fileID: 9100000, guid: 1e802cca690d99d4fa94402fd778e006, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
