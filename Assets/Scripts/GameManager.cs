@@ -54,6 +54,8 @@ public class GameManager : MonoBehaviour
     private Animator ClawMarksAnimator;
     private Coroutine clawMarksCoroutine;
 
+    public AudioManager audioManager;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

@@ -19,6 +19,8 @@ public class AudioManager : MonoBehaviour
     [SerializeField]
     Sound[] sounds;
 
+    public Sound mainSong;
+
     private void Awake()
     {
         foreach(Sound s in sounds)
@@ -33,7 +35,8 @@ public class AudioManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        mainSong.source.loop = true;
+        mainSong.source.Play();
     }
 
     // Update is called once per frame
@@ -44,7 +47,8 @@ public class AudioManager : MonoBehaviour
 
     public void Play(string name)
     {
-        Array.Find(sounds, sound => sound.name == name);
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        s.source.Play();
     }
 
 
