@@ -316,6 +316,7 @@ public class GameManager : MonoBehaviour
 
     private string ToScience(int num)
     {
+        return num.ToString();
         if (num > 1000)
         {
             return num.ToString("E2");
