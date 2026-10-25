@@ -188,7 +188,7 @@ public class GameManager : MonoBehaviour
         if (paper >= paperConversion)
         {
             cards+= clickPowers[2];
-            totalCardsCreated += autoClickPowers[2];
+            totalCardsCreated += clickPowers[2];
             paper -= paperConversion;
             UpdatePaper();
             UpdateCards();
@@ -217,12 +217,12 @@ public class GameManager : MonoBehaviour
                     UpdateTrees();
                     break;
                 case Resource.Paper:
-                    UpdatePaper();
                     paper -= price;
+                    UpdatePaper();
                     break;
                 case Resource.Card:
-                    UpdateCards();
                     cards -= price;
+                    UpdateCards();
                     break;
                 default:
                     break;
@@ -319,6 +319,7 @@ public class GameManager : MonoBehaviour
 
     public void GoToMainMenu()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(1);
     }
 
@@ -330,6 +331,9 @@ public class GameManager : MonoBehaviour
         int total = Mathf.FloorToInt(playTime);
         winTimeText.text = $"Time: {total / 3600:00}:{(total % 3600) / 60:00}:{total % 60:00}";
         winMessageText.text = winMessage;
+
+        pauseCanvas.SetActive(false);
+        winCanvas.SetActive(true);
 
         if (winAudioSource != null && winClip != null)
             winAudioSource.PlayOneShot(winClip);
