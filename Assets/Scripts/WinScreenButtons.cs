@@ -11,5 +11,6 @@ public class WinScreenButtons : MonoBehaviour
     {
         Debug.Log("Finish clicked");
         GameManager.Instance.ShowWinScreen();
+        GameManager.Instance.audioManager.mainSong.source.Stop();
     }
 }
