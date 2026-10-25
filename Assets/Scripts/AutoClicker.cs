@@ -21,6 +21,10 @@ public class AutoClicker : MonoBehaviour
     private float lastCardClick;
     private GameManager manager;
 
+
+    public static event System.Action<Resource> OnAutoClickerStarted;
+    public static event System.Action<Resource> OnAutoClick; 
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -43,6 +47,7 @@ public class AutoClicker : MonoBehaviour
             {
                 manager.AutoChopTree();
                 lastTreeClick = Time.time;
+                OnAutoClick?.Invoke(Resource.Wood);
             }
         }
         if (isPaperOn)
@@ -51,6 +56,7 @@ public class AutoClicker : MonoBehaviour
             {
                 manager.AutoMakePaper();
                 lastPaperClick = Time.time;
+                OnAutoClick?.Invoke(Resource.Paper);
             }
         }
         if (isCardOn)
@@ -59,6 +65,7 @@ public class AutoClicker : MonoBehaviour
             {
                 manager.AutoMakeCard();
                 lastCardClick = Time.time;
+                OnAutoClick?.Invoke(Resource.Card);
             }
         }
     }
@@ -84,6 +91,7 @@ public class AutoClicker : MonoBehaviour
             default:
                 break;
         }
+        OnAutoClickerStarted?.Invoke(resource);
     }
 
     // Stop the auto clicker for a specific resource
