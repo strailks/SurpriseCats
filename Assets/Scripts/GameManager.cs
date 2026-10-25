@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI winMessageText;
     public AudioSource winAudioSource;
     public AudioClip winClip;
-    [TextArea] public string winMessage = "The forest is gone, but that is of no concern. You have what is truly important in life. 10,000 Cat TCG cards!";
+    [TextArea] public string winMessage = "The forest is gone, but that is of no concern to you. You have what is truly important in life. 10,000 Cat TCG cards!";
     private float playTime = 0f;
     private bool hasWon = false;
 
@@ -338,19 +338,17 @@ public class GameManager : MonoBehaviour
         if (hasWon) return;
         hasWon = true;
 
+        pauseCanvas.SetActive(false);
+        winCanvas.SetActive(true);
+
         int total = Mathf.FloorToInt(playTime);
         winTimeText.text = $"Time: {total / 3600:00}:{(total % 3600) / 60:00}:{total % 60:00}";
         winMessageText.text = winMessage;
-
-        pauseCanvas.SetActive(false);
-        winCanvas.SetActive(true);
 
         if (winAudioSource != null && winClip != null)
             winAudioSource.PlayOneShot(winClip);
 
         Time.timeScale = 0f;
-                
-            
     }
 
 }
