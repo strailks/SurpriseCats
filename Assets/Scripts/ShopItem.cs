@@ -50,6 +50,10 @@ public class ShopItem : MonoBehaviour
                 UpdateValue();
             }
         }
+        if(option == ShopOptions.Autoclick && value == 1)
+        {
+            //GetComponent<Button>().interactable = false;
+        }
     }
 
     public void StartupCost(int _cost)
@@ -72,7 +76,7 @@ public class ShopItem : MonoBehaviour
     }
 
     // Update the value text
-    private void UpdateValue()
+    public void UpdateValue()
     {
         valueText.text = "Value: " + ToScience(value) + " Costs: " + ToScience(cost);
     }
@@ -80,6 +84,7 @@ public class ShopItem : MonoBehaviour
     // Convert a number to scientific notation if it is greater than 1000
     private string ToScience(int num)
     {
+        /*
         if (num > 1000)
         {
             return num.ToString("E2");
@@ -87,6 +92,8 @@ public class ShopItem : MonoBehaviour
         else
         {
             return num.ToString();
-        }
+        }*/
+
+        return num.ToString();
     }
 }

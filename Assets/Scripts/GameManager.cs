@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System;
 using System.Security.Cryptography.X509Certificates;
 using Unity.VisualScripting;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -217,7 +218,7 @@ public class GameManager : MonoBehaviour
         {
             return false;
         }
-            int _compValue = (item.resource == Resource.Wood ? trees : (item.resource == Resource.Paper ? paper : cards));
+        int _compValue = (item.resource == Resource.Wood ? trees : (item.resource == Resource.Paper ? paper : cards));
         if(price <= _compValue)
         {
             switch (item.resource)
@@ -250,6 +251,10 @@ public class GameManager : MonoBehaviour
                         autoClicker.StartAutoClicker(item.resource);
                     }
                     autoClicker.SetTimeBetween(item.resource, item.value);
+                    if(item.value == 1)
+                    {
+                        item.GetComponentInChildren<Button>().interactable = false;
+                    }
                     break;
 
                 case ShopOptions.Cheaper:
@@ -257,7 +262,8 @@ public class GameManager : MonoBehaviour
                     foreach(ShopItem shopItem in canvases[(int)item.resource].GetComponentsInChildren<ShopItem>())
                     {
                         shopItem.cost = Mathf.Max(1, (int)(shopItem.cost * ((10 - item.value) / 10.0)));
-                        shopItem.UpdateCost();
+                        shopItem.UpdateValue();
+                        Debug.Log("frown");
                     }
                     break;
 
@@ -311,6 +317,7 @@ public class GameManager : MonoBehaviour
 
     private string ToScience(int num)
     {
+        return num.ToString();
         if (num > 1000)
         {
             return num.ToString("E2");
