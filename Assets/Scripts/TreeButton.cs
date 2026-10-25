@@ -33,6 +33,7 @@ public class TreeButton : MonoBehaviour
             default:
                 break;
         }
+        manager.audioManager.Play("claw1");
         //manager.AddTreesChopped(manager.GetClickPower());
     }
 }

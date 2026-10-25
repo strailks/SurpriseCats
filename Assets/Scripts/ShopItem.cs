@@ -41,7 +41,7 @@ public class ShopItem : MonoBehaviour
     // Buy the item if the player has enough money
     public void BuyItem()
     {
-        if(manager.GetMoney() >= cost)
+        if(manager.GetMoney(resource) >= cost)
         {
             if (manager.BuyItem(cost, this))
             {

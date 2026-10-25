@@ -195,9 +195,19 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public int GetMoney()
+    public int GetMoney(Resource resource)
     {
-        return trees;
+        switch(resource)
+        {
+            case Resource.Wood:
+                return trees;
+            case Resource.Paper:
+                return paper;
+            case Resource.Card:
+                return cards;
+            default:
+                return -1;
+        }
     }
 
     public bool BuyItem(int price, ShopItem item)
@@ -210,7 +220,7 @@ public class GameManager : MonoBehaviour
             int _compValue = (item.resource == Resource.Wood ? trees : (item.resource == Resource.Paper ? paper : cards));
         if(price <= _compValue)
         {
-            switch (item.resource)  
+            switch (item.resource)
             {
                 case Resource.Wood:
                     trees -= price;

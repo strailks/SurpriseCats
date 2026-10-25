@@ -35,6 +35,9 @@ public class AudioManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        mainSong.source = gameObject.AddComponent<AudioSource>();
+        mainSong.source.clip = mainSong.clip;
+        mainSong.source.volume = mainSong.volume;
         mainSong.source.loop = true;
         mainSong.source.Play();
     }
